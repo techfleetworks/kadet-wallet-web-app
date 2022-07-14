@@ -6,6 +6,10 @@ module.exports = {
   entry: {
     popup: './src/Popup.jsx',
   },
+  // install webpack-dev-server
+  // devServer: {
+  //   watchFiles: ['./src/**/*']
+  // },
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: '[name].js',
@@ -22,6 +26,11 @@ module.exports = {
                     presets: ['@babel/preset-env', '@babel/preset-react'],
                 }
             } 
+        },
+        {
+          test: /\.css$/i,
+          include: path.resolve(__dirname, "src"),
+          use: ["style-loader", "css-loader"],
         },
         // supposed to handle loading of images 
         // {
