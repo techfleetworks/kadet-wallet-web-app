@@ -1,6 +1,14 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "name": "Kadet Extensiion",
+  "description": "Kadet Wallet Extensiion",
+  "version": "1.0",
+  "manifest_version": 3,
+  "action": {
+    "default_popup": "popup.html"
+  },
+
+
+  "short_name": "Kadet App",
   "icons": [
     {
       "src": "favicon.ico",
