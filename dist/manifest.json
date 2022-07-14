@@ -1,6 +1,6 @@
 {
   "name": "Kadet Extensiion",
-  "description": "Kadet Wallet Extensiion",
+  "description": "Kadet Wallet Extension",
   "version": "1.0",
   "manifest_version": 3,
   "action": {
