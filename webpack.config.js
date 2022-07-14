@@ -7,13 +7,14 @@ module.exports = {
     popup: './src/Popup.jsx',
   },
   // install webpack-dev-server
-  // devServer: {
-  //   watchFiles: ['./src/**/*']
-  // },
+  // don't believe thi sis currently doing what it is supposed to
+  devServer: {
+    watchFiles: ['src/**/*']
+  },
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: '[name].js',
-    // assetModuleFilename: 'assets/images/[hash][ext]'
+    clean: true,
   },
   module: {
     rules: [
@@ -30,23 +31,19 @@ module.exports = {
         {
           test: /\.css$/i,
           include: path.resolve(__dirname, "src"),
-          use: ["style-loader", "css-loader"],
+          use: ["style-loader", "css-loader", "postcss-loader"],
         },
-        // supposed to handle loading of images 
-        // {
-        //     test: /\.(png|svg|jpg|jpeg|gif)$/i,
-        //     type: 'asset/resource'
-        // }
     ],
   },
-  plugins: [new HtmlWebpackPlugin({
-    template: './src/popup.html',
-    filename: 'popup.html'
-  }),
-  new CopyPlugin({
-    patterns: [
-      { from: "public"}
-    ],
-  }),
-],
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: './src/popup.html',
+      filename: 'popup.html'
+    }),
+    new CopyPlugin({
+      patterns: [
+        { from: "public" }
+      ],
+    }),
+  ],
 };
