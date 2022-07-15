@@ -14,6 +14,7 @@ module.exports = {
     path: path.resolve(__dirname, 'dist'),
     filename: '[name].js',
     clean: true,
+    assetModuleFilename: 'images/[name][ext]'
   },
   module: {
     rules: [
@@ -32,16 +33,21 @@ module.exports = {
           include: path.resolve(__dirname, "src"),
           use: ["style-loader", "css-loader", "postcss-loader"],
         },
+        // might be able to uninstall svg-url-loader
+        // {
+        //   test: /\.svg$/i,
+        //   use: [
+        //     {
+        //       loader: "svg-url-loader",
+        //       options: {
+        //         limit: 10000,
+        //       },
+        //     },
+        //   ],
+        // },
         {
-          test: /\.svg$/i,
-          use: [
-            {
-              loader: "svg-url-loader",
-              options: {
-                limit: 10000,
-              },
-            },
-          ],
+          test: /\.(png|jpe?g|gif|svg)$/i,
+          type: 'asset/resource'
         },
     ],
   },
