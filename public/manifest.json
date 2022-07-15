@@ -4,9 +4,20 @@
   "version": "1.0",
   "manifest_version": 3,
   "action": {
-    "default_popup": "popup.html"
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icons/k16.png",
+      "32": "icons/k32.png",
+      "48": "icons/k48.png",
+      "128": "icons/k128.png"
+    }
   },
-
+  "icons": {
+    "16": "icons/k16.png",
+    "32": "icons/k32.png",
+    "48": "icons/k48.png",
+    "128": "icons/k128.png"
+  },
 
   "short_name": "Kadet App",
   "start_url": ".",
