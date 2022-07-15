@@ -1,74 +1,57 @@
-# kadet-wallet-web-app
-This is a repo for the web application sandbox environment we're building for Kadet Wallet. This is separate from the web extension we will build.
+# Kadet Wallet Extension
+This is a repo for the web extension Kadet Wallet.
 
+## Tech stack
 
-# Getting Started with Create React App
+- React V18
+- TailwindCSS 3
+- Webpack 5
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Instructions
 
-## Available Scripts
+Clone down this repo by pasting `git clone https://github.com/techfleetworks/kadet-wallet-web-app.git` into your terminal when inside the directory of your choosing. 
+
+Then `cd kadet-wallet-web-app` to enter the cloned repo's directory.
+
+In here run `npm i` to install the dependencies. 
+
+You should be able to open this in your IDE of choice.
+
+## Deployment 
 
 In the project directory, you can run:
 
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
 ### `npm run build`
+This will build out a deployable version of the code you currently have. The bundled files will live in the `dist` folder. We will refer back to this directory when installing this in our browser.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### `npm run dev`
+This command will run a local development server for the extension so that you can see your changes in the extension and in a browser tab without having to re-install the extension every time a change is made. 
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+Essentially, the browser only reads JS, HTML, CSS, image files, etc. and therefore needs React to be built out into a deployed version before it can function. Generally speaking, that would require us to upload/install the extension after every change we make to see our progress. 
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+This makes for a very difficult and cumbersome development environment so with the help of Webpack as our bundler, we can run a development server and see our changes as we make them. 
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Once satisfied with our updates we can run the `npm run build` command mentioned above to get the files to install the extension correctly for production use.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Installation
+In your Chrome browser paste `chrome://extensions/` into the URL field and hit enter. In the top right make sure `Developer mode` is `on`.
+![Dev Extensions](/readmeImages/extDev.png)
+Then, click on `Load unpacked` and navigate to the `dist` directory in your repo. Once the `dist` folder is selected (not any particular file), hit `Select`
+![dist](/readmeImages/dist.png)
+You should now see the Kadet Extension as one of your browser extension options.
+![dist](/readmeImages/ext.png)
+Feel free to pin the Kadet extension to your browser for quick access by making sure the pin next to the extension below is blue. 
+![dist](/readmeImages/pin.png)
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## More on local development environment
+Note that Chrome assigns and ID to the extension on your browser, see below:
+![dist](/readmeImages/ext.png)
 
-## Learn More
+To access this extension's contents inside of a webpage for full use of Chrome Dev Tools (console, elements, etc.) we need to do the following:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- make sure you are running the dev server, `npm run dev`
+- open a new tab in Chrome and go to: `chrome-extension://ID/popup.html` replacing ID with the ID you see for your extension (see photo above). 
 
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+You should now be able to see the extension on a normal browser page and inspect elements and check console.logs as you'd like. 
