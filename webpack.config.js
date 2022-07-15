@@ -6,8 +6,7 @@ module.exports = {
   entry: {
     popup: './src/Popup.jsx',
   },
-  // install webpack-dev-server
-  // don't believe thi sis currently doing what it is supposed to
+  // don't believe this is currently doing what it is supposed to
   devServer: {
     watchFiles: ['src/**/*']
   },

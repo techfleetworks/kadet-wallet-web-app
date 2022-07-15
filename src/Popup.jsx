@@ -10,7 +10,9 @@ function Popup() {
     <div>
         {/* <img src={KadetLogo} alt='Logo' width="250" /> */}
         {/* <KadetLogo /> */}
-        <h1 className='text-3xl'>I am the pop-up for the Kadet wallet extension</h1>
+        <div className='text-center mt-4'>
+            <h1 className='text-3xl'>I am the pop-up for the Kadet wallet extension</h1>
+        </div>
     </div>
   )
 }
