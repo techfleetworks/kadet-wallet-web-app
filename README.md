@@ -37,16 +37,25 @@ Once satisfied with our updates we can run the `npm run build` command mentioned
 
 ## Installation
 In your Chrome browser paste `chrome://extensions/` into the URL field and hit enter. In the top right make sure `Developer mode` is `on`.
+
 ![Dev Extensions](/readmeImages/extDev.png)
+
 Then, click on `Load unpacked` and navigate to the `dist` directory in your repo. Once the `dist` folder is selected (not any particular file), hit `Select`
+
 ![dist](/readmeImages/dist.png)
+
 You should now see the Kadet Extension as one of your browser extension options.
+
 ![dist](/readmeImages/ext.png)
+
 Feel free to pin the Kadet extension to your browser for quick access by making sure the pin next to the extension below is blue. 
+
 ![dist](/readmeImages/pin.png)
 
 ## More on local development environment
+
 Note that Chrome assigns and ID to the extension on your browser, see below:
+
 ![dist](/readmeImages/ext.png)
 
 To access this extension's contents inside of a webpage for full use of Chrome Dev Tools (console, elements, etc.) we need to do the following:
