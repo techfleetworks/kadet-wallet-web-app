@@ -10,12 +10,10 @@ function Popup() {
   return (
     <div>
         <div className='flex justify-center mt-5'>
-          <img src={KadetLogo} alt='Logo' width="250" />
+          <img src={KadetLogo} alt='Logo' width="101" />
         </div>
         <Setup />
-        <div className='text-center mt-4'>
-            <h1 className='text-3xl'>I am the pop-up for the Kadet wallet extension</h1>
-        </div>
+        
     </div>
   )
 }
