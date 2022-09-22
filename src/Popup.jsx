@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './popup.css';
 import KadetLogo from './assets/images/KadetLogo.svg';
-import Setup from './components/Setup';
+import Setup from './components/setup/Setup';
 
 const popupRoot = ReactDOM.createRoot(document.getElementById('popup-root'))
 
