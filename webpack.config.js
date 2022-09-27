@@ -6,9 +6,9 @@ module.exports = {
   entry: {
     popup: './src/Popup.jsx',
   },
-  // don't believe this is currently doing what it is supposed to
+  // the following is telling webpack what to 'watch' when live reloading changes that are made
   devServer: {
-    watchFiles: ['src/**/*']
+    watchFiles: ['src/**/*', 'src/components/**/*', 'src/components/setup/**/*', 'src/components/setup/createPassword/**/*']
   },
   output: {
     path: path.resolve(__dirname, 'dist'),
