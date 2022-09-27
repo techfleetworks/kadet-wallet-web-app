@@ -8,7 +8,8 @@ module.exports = {
   },
   // the following is telling webpack what to 'watch' when live reloading changes that are made
   devServer: {
-    watchFiles: ['src/**/*', 'src/components/**/*', 'src/components/setup/**/*', 'src/components/setup/createPassword/**/*']
+    // watchFiles: ['src/**/*', 'src/components/**/*', 'src/components/setup/**/*', 'src/components/setup/createPassword/**/*']
+    watchFiles: ['src/**/*.js', 'src/**/*.jsx']
   },
   output: {
     path: path.resolve(__dirname, 'dist'),

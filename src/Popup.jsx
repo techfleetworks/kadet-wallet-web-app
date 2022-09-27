@@ -8,7 +8,7 @@ const popupRoot = ReactDOM.createRoot(document.getElementById('popup-root'))
 
 function Popup() {
   return (
-    <div>
+    <div className='h-[600px] flex flex-col flex-1'>
         <div className='flex justify-center mt-5'>
           <img src={KadetLogo} alt='Logo' width="101" />
         </div>
