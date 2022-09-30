@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import { Link } from 'react-router-dom';
 
 function CreatePassword() {
     const [pass, setPass] = useState('');
@@ -16,9 +17,6 @@ function CreatePassword() {
     const handleConfirm = (e) => {
         setConfirm(e.target.value);
     };
-    const handlePasswordForm = (e) => {
-        e.preventDefault();
-    };
     const handleCheck = (e) => {
         setCheck(!check)
     };
@@ -30,12 +28,12 @@ function CreatePassword() {
     
 
   return (
-    <div className='text-center w-full flex flex-col justify-between relative h-full'>
-        <div className='absolute h-[20px] w-[20px] top-[-70px] p-[1px] rounded-sm bg-gradient-to-r from-[#E4FC70] to-[#9AECA4]'>
+    <div className='text-center w-full flex flex-col justify-between relative h-full px-3 pt-12'>
+        <Link to="/" className='absolute h-[20px] w-[20px] top-[-20px] left-3 p-[1px] rounded-sm bg-gradient-to-r from-[#E4FC70] to-[#9AECA4]'>
             <div className='bg-[#37393F] rounded-sm'>
                 <button className='text-transparent bg-clip-text bg-gradient-to-r from-[#E4FC70] to-[#9AECA4]'>&#60;</button>
             </div>
-        </div>
+        </Link>
         <div className='flex flex-col gap-8'>
             <div className='flex flex-col'>
                 <h2 className='text-2xl text-center mb-5 font-medium'>Create a password</h2>
@@ -52,14 +50,13 @@ function CreatePassword() {
                         <p className={`${match ? 'opacity-0' : 'opacity-1' } cursor-default text-left text-[#FF7171]`}>Passwords do not match</p>
                     </div>
                 </div>
-                {/* accent-[#37393F] bg-[#37393F] */}
                 <div className="flex items-center font-normal text-sm text-white">
                     <label className='cursor-pointer relative w-4 h-4 rounded border border-[#F4F2EE]'>
                         <input id="link-checkbox" onChange={handleCheck} checked={check} type="checkbox" className="absolute cursor-pointer opacity-0 w-4 h-4  appearance-none"/>
                         <span className={`absolute top-0 left-0 ${check ? 'bg-[#37393F] block rotate-45 transform left-[5px] top-0.5 w-[5px] h-[8px] border-2 border-t-0 border-l-0 border-[#F4F2EE] ' : 'bg-[#37393F] hidden'}  h-[20px] w-[20px] content-[""]`}></span>
                     </label>
 
-                    <label for="link-checkbox" className="ml-2">I agree to <a href="#" target="_blank" rel="noopener" className="text-[#E4FC70] underline">Terms of Service</a>
+                    <label htmlFor="link-checkbox" className="ml-2">I agree to <a href="#" target="_blank" rel="noopener" className="text-[#E4FC70] underline">Terms of Service</a>
                     </label>
                 </div>
             </form>
